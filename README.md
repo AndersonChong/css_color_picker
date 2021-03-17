@@ -4,4 +4,4 @@ Generating gradient with CSS had never been easier! This website features a grap
 
 ## Screenshots
 
-![CSS Gradient Picker Screenshot](./src/Screenshots/"2021 03 17 screenshot.png")
+![CSS Gradient Picker Screenshot](./src/Screenshots/2021%2003%2017%20screenshot.png)

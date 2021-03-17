@@ -1,8 +1,7 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 const Clipboard = ({ code }) => {
   const [btnText, setBtnText] = useState("Copy");
-  const codeRef = useRef();
 
   const onCopy = () => {
     navigator.clipboard
@@ -18,32 +17,26 @@ const Clipboard = ({ code }) => {
     }, 3000);
   };
 
-  let btnClass = "";
+  let btnClass;
   if (btnText === "Copy") {
     btnClass =
-      "col-span-10 rounded text-white hover:-translate-y-0.5 transform transition h-12 bg-yellow-500 hover:bg-yellow-400";
+      "absolute -top-2 -left-2 h-full w-full rounded hover:translate-y-1 hover:translate-x-1 transform transition bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring border-2 border-black focus:ring-black focus:ring-opacity-30";
   } else if (btnText === "Failed") {
     btnClass =
-      "col-span-10 rounded text-white hover:-translate-y-0.5 transform transition h-12 bg-red-500 hover:bg-red-400";
+      "absolute -top-2 -left-2 h-full w-full rounded hover:translate-y-1 hover:translate-x-1 transform transition bg-red-500 hoverer:bg-red-400 focus:outline-none focus:ring border-2 border-black focus:ring-black focus:ring-opacity-30";
   } else {
     btnClass =
-      "col-span-10 rounded text-white hover:-translate-y-0.5 transform transition h-12 bg-green-500 hover:bg-green-400";
+      "absolute -top-2 -left-2 h-full w-full rounded hover:translate-y-1 hover:translate-x-1 transform transition bg-green-500 hover:bg-green-400 focus:outline-none focus:ring border-2 border-black focus:ring-black focus:ring-opacity-30";
   }
 
   return (
-    <div className="bg-gray-500 rounded-lg p-2 flex flex-col space-y-2 border-4 border-black ">
-      <h1 className="text-center text-3xl py-2 text-white">CSS</h1>
-      <div className="grid grid-cols-10 gap-4 bg-white rounded-b-lg p-3">
-        <input
-          ref={codeRef}
-          className="col-span-10 border border-gray-500 rounded px-2 py-1.5 cursor-text"
-          type="text"
-          value={code}
-          disabled
-        />
-        <button className={btnClass} onClick={onCopy}>
-          {btnText}
-        </button>
+    <div className="relative bg-black rounded-lg h-56">
+      <div className="absolute -top-2 -left-2 bg-white h-full w-full rounded-lg border-2 border-black flex flex-col space-y-2 justify-center p-4 space-y-6 hover:translate-x-1 hover:translate-y-1 transform transition">
+        <div className="relative bg-black flex-1 rounded">
+          <button className={btnClass} onClick={onCopy}>
+            CSS
+          </button>
+        </div>
       </div>
     </div>
   );

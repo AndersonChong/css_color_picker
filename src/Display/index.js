@@ -4,19 +4,12 @@ const Display = ({ color }) => {
   const gradientClass = `linear-gradient(to right, rgb(${fr}, ${fg}, ${fb}), rgb(${tr}, ${tg}, ${tb}))`;
 
   return (
-    <div className="h-60-screen">
+    <div className="relative h-60-screen bg-black rounded-lg">
       <div
-        className="h-full p-2 rounded-xl"
+        className="absolute -top-2 -left-2 h-full w-full rounded-lg border-2 border-black hover:translate-y-1 hover:translate-x-1 transform transition"
         style={{ backgroundImage: gradientClass }}
       >
-        <div className="h-full p-2 bg-white rounded-lg">
-          <div
-            className="h-full rounded-lg"
-            style={{ backgroundImage: gradientClass }}
-          >
-            {""}
-          </div>
-        </div>
+        {""}
       </div>
     </div>
   );

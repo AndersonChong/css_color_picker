@@ -19,13 +19,11 @@ const Setting = ({
             onBlur={onBlur}
             value={degree}
             name="degree"
-            span="2"
           />
           <SliderInput
             onChange={degreeChange}
             value={degree}
             name="degree"
-            span="8"
             min="0"
             max="360"
           />

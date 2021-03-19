@@ -1,5 +1,5 @@
 const Header = ({ title, color }) => {
-  const shadowClass = `relative h-24 bg-${color}-500 border-2 border-black rounded-lg`;
+  const shadowClass = `relative h-24 ${color} border-2 border-black rounded-lg`;
 
   return (
     <div className={shadowClass}>

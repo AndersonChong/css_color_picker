@@ -1,11 +1,7 @@
-const NumberInput = ({ onChange, onBlur, value, name, span }) => {
-  const inputClass = `col-span-${span} lg:col-span-${
-    span + 1
-  } xl:col-span-${span} flex px-0.5 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-30 focus:ring-offset-2`;
-
+const NumberInput = ({ onChange, onBlur, value, name }) => {
   return (
     <input
-      className={inputClass}
+      className="col-span-2 lg:col-span-3 xl:col-span-2 flex px-0.5 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-30 focus:ring-offset-2"
       onChange={onChange}
       onBlur={onBlur}
       value={value}

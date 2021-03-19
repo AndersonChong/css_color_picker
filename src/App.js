@@ -103,7 +103,7 @@ function App({ firebase }) {
 
   // method to update the color value
   const changeHandler = (e) => {
-    setColorValue({ ...colorValue, [e.target.name]: e.target.value });
+    setColorValue({ ...colorValue, [e.target.name]: parseInt(e.target.value) });
   };
 
   useEffect(() => {
@@ -113,8 +113,13 @@ function App({ firebase }) {
   return (
     <div className="container mx-auto flex flex-col space-y-12 p-4">
       <div className="flex flex-col space-y-4">
-        <Header title="~~ CSS Gradient Picker ~~" color="yellow" />
-        <Display color={colorValue} degree={deg} gradientType={gradientType} />
+        <Header title="~~ CSS Gradient Picker ~~" color="bg-yellow-500" />
+        <Display
+          color={colorValue}
+          degree={deg}
+          gradientType={gradientType}
+          authUser={authUser}
+        />
         <ControlPanel
           colorValue={colorValue}
           changeHandler={changeHandler}
@@ -129,14 +134,10 @@ function App({ firebase }) {
         />
       </div>
       <div className="flex flex-col space-y-4">
-        <Header title="~~ Saved Gradients ~~" color="blue" />
+        <Header title="~~ Saved Gradients ~~" color="bg-blue-500" />
         {authUser ? (
           <>
-            <Gallery
-              color={colorValue}
-              degree={deg}
-              gradientType={gradientType}
-            />
+            <Gallery authUser={authUser} />
             <Profile />
           </>
         ) : (

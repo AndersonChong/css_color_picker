@@ -1,6 +1,7 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/analytics";
+import "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBwB1Dk0YFdk8bmQIOBkTb7YPq9AF46rIw",
@@ -17,6 +18,7 @@ class Firebase {
     app.initializeApp(firebaseConfig);
     app.analytics();
     this.auth = app.auth();
+    this.db = app.firestore();
   }
 
   createUserWithEmailAndPassword(email, password) {
@@ -29,6 +31,10 @@ class Firebase {
 
   doSignOut() {
     return this.auth.signOut();
+  }
+
+  serverTimeStamp() {
+    return app.firestore.FieldValue.serverTimestamp();
   }
 }
 

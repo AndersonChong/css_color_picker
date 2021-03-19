@@ -30,7 +30,7 @@ const SignUpForm = ({ firebase, onClick }) => {
       <p>
         Sign up now to{" "}
         <span className="border-dashed border-b border-gray-500">
-          save custom gradient
+          save custom gradients
         </span>
         , it's free anyway
       </p>

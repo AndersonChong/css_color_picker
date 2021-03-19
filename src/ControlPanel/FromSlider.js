@@ -12,13 +12,11 @@ const FromSlider = ({ colorValue, onChange, onBlur }) => {
             onBlur={onBlur}
             value={colorValue.fr}
             name="fr"
-            span="2"
           />
           <SliderInput
             onChange={onChange}
             value={colorValue.fr}
             name="fr"
-            span="8"
             min="0"
             max="255"
           />
@@ -27,13 +25,11 @@ const FromSlider = ({ colorValue, onChange, onBlur }) => {
             onBlur={onBlur}
             value={colorValue.fg}
             name="fg"
-            span="2"
           />
           <SliderInput
             onChange={onChange}
             value={colorValue.fg}
             name="fg"
-            span="8"
             min="0"
             max="255"
           />
@@ -42,13 +38,11 @@ const FromSlider = ({ colorValue, onChange, onBlur }) => {
             onBlur={onBlur}
             value={colorValue.fb}
             name="fb"
-            span="2"
           />
           <SliderInput
             onChange={onChange}
             value={colorValue.fb}
             name="fb"
-            span="8"
             min="0"
             max="255"
           />
